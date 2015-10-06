@@ -642,9 +642,6 @@ textarea {
   position: relative;
   padding-top: 1px;
 }
-.page__footer {
-  background: #f1acf2;
-}
 
 /* page */
 /* ---------------------------------------END--- */
@@ -1255,6 +1252,33 @@ body .language:hover {
 }
 
 /* steps */
+/* ---------------------------------------END--- */
+/* footer */
+/* --------------------------------------------- */
+.footer {
+  text-align: center;
+  padding-bottom: 26px;
+}
+
+/* footer */
+/* ---------------------------------------END--- */
+/* made-by */
+/* --------------------------------------------- */
+.made-by__a {
+  text-transform: uppercase;
+}
+.made-by__a:visited {
+  color: #FF3838;
+  border-color: #ffd1d1;
+  border-color: rgba(255, 56, 56, 0.3);
+}
+.made-by__a:hover {
+  color: #000;
+  border-color: #4d4d4d;
+  border-color: rgba(0, 0, 0, 0.3);
+}
+
+/* made-by */
 /* ---------------------------------------END--- */
 
 @media screen and (max-width: 885px) {

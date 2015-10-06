@@ -78,16 +78,21 @@
 			margin-left: - $page_space_small
 			margin-right: - $page_space_small
 			padding: 0 $page_space_small
+	
+	&__top,
+	&__section
+		max-width: $page-content_w_max
+		margin: auto
+		position: relative
 
 	&__section
 		margin-bottom: 112px
+		
 
 	&__top
 		min-height: 920px
 		position: relative
 		padding-top: 1px
-		max-width: $page-content_w_max
-		margin: auto
 
 	&__footer
 		background: #f1acf2
@@ -729,7 +734,7 @@
 			margin-bottom: 26px
 	
 	&__video
-		max-width: 814px
+		max-width: $video_w_max
 		margin: auto
 		margin-bottom: 60px
 		+box-shadow(0px -17px 25px -25px rgba($shadow_color, .8))
@@ -761,6 +766,11 @@
 		display: block
 		position: relative
 		z-index: 2
+		max-width: 100%
+		height: auto
+
+		.ie9 &
+			width: 100%
 
 
 
@@ -773,6 +783,8 @@
 
 .columns
 	@extend %clear
+	max-width: $video_w_max
+	margin: auto
 
 	&__i
 		@extend %bszbb
@@ -897,3 +909,5 @@
 
 /* steps
 /* ---------------------------------------END--- */
+
+

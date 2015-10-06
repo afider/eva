@@ -1,0 +1,145 @@
+html
+	@include rem-baseline
+
+
+body
+	background: #fff url("../img/figure-top.jpg") center 0 no-repeat
+	color: $text_color
+	+rem(font-size, 18px)
+	line-height: 1.45
+	font-family: $font_main
+
+	+max-screen($mq_w_medium)
+		+rem(font-size, 15px)
+
+	+max-screen($mq_w_small)
+		+rem(font-size, 14px)
+
+
+p
+	margin: 0 0 $content_bot_space 0
+
+ul
+	margin: 0 0 $content_bot_space -20px
+
+ol
+	margin: 0 0 $content_bot_space -20px
+
+ul li,
+ol li
+	margin-bottom: 8px
+
+
+/*  Headers
+/*  -------------------------------------------- */
+
+#{headings(1, 6)}
+	margin: 35px 0 25px 0
+	padding: 0
+	line-height: 1.3
+	font-weight: bold
+	@extend %font-h
+
+#{headings(1, 1)}
+	margin-bottom: 30px
+	margin-top: 0
+	+rem(font-size, 53px)
+
+	+max-screen($mq_w_medium)
+		+rem(font-size, 36px)
+
+	+max-screen($mq_w_small)
+		+rem(font-size, 20px)
+
+
+#{headings(2, 2)}
+	font-size: 20px
+	margin-bottom: 35px
+	+rem(font-size, 43px)
+
+	+max-screen($mq_w_medium)
+		+rem(font-size, 26px)
+
+	+max-screen($mq_w_small)
+		+rem(font-size, 17px)
+
+#{headings(3, 6)}
+	font-size: 17px
+	+rem(font-size, 33px)
+
+	+max-screen($mq_w_medium)
+		+rem(font-size, 20px)
+
+	+max-screen($mq_w_small)
+		+rem(font-size, 15px)
+
+/* Headers
+/* ---------------------------------------END--- */
+
+
+/* fonts
+/* --------------------------------------------- */
+
++font-face( $family: "Helvetica Neue Cyr", $file_name_r: "helveticaneuecyr-roman-webfont", $file_name_i: "helveticaneuecyr-italic-webfont", $file_name_b: "helveticaneuecyr-bold-webfont", $file_name_bi: "helveticaneuecyr-bolditalic-webfont")
+
++font-face( $family: "Roboto Slab", $file_name_r: "robotoslab-regular-webfont", $file_name_b: "robotoslab-bold-webfont")
+
+%font-h
+	font-family: 'Roboto Slab', $font_main
+
+
+.font-h
+	@extend %font-h
+
+
+/* fonts
+/* ---------------------------------------END--- */
+
+
+/* Links
+/* --------------------------------------------- */
+
+a, .u
+	text-decoration: none
+	border-bottom-width: 1px
+	border-bottom-style: solid
+
+	+link-color ($color: $link_color, $color_hover: $link_color_hover, $color_visited: $link_color_visited, $animation-time: $link_animation-time)
+
+	&:focus
+		outline: thin dotted
+
+
+.dashed,
+.dotted
+	cursor: pointer
+
+
+.dashed
+	border-bottom-style: dashed
+
+.dotted
+	border-bottom-style: dotted
+
+/* Links
+/* -------------------------------------END----- */
+
+::-moz-selection
+	background: $selection_bg
+	text-shadow: none
+
+::selection
+	background: $selection_bg
+	text-shadow: none
+
+hr
+	display: block
+	margin: 1em 0
+	padding: 0
+	height: 1px
+	border: 0
+	border-top: 1px solid #ccc
+
+textarea
+	resize: vertical
+

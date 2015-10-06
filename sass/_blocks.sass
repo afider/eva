@@ -1,0 +1,878 @@
+%bszbb
+	@include box-sizing(border-box)
+
+/* clearfix
+/* --------------------------------------------- */
+
+
+%clear
+	&:before,
+	&:after
+		display: table
+		content: ''
+		clear: both
+	&:after
+		clear: both
+
+.clearfix-block
+	clear: both
+	overflow: hidden
+	margin: 0
+	padding: 0
+	font-size: 0
+	line-height: 0
+
+.clearfix 
+	&:before,
+	&:after
+		display: table
+		content: ''
+		clear: both
+	&:after
+		clear: both
+
+
+/* clearfix
+/* ---------------------------------------END--- */
+
+
+/* page
+/* --------------------------------------------- */
+
+.page
+	$page_space: 37px
+	$page_space_medium: 30px
+	$page_space_small: 15px
+
+	img
+		max-width: 100%
+		height: auto
+
+	@extend %bszbb
+	padding: 0 $page_space
+	position: relative
+	width: 100%
+	margin: auto
+	max-width: $page_w_max
+
+	+max-screen($mq_w_medium)
+		padding: 0 $page_space_medium
+	+max-screen($mq_w_small)
+		padding: 0 $page_space_small
+
+	&__header
+		//background: #adf785
+		margin-left: - $page_space
+		margin-right: - $page_space
+		padding: 0 $page_space
+		margin-bottom: 64px
+		+max-screen($mq_w_auth-hide)
+			margin-bottom: 16px
+
+		+max-screen($mq_w_medium)
+			margin-left: - $page_space_medium
+			margin-right: - $page_space_medium
+			padding: 0 $page_space_medium
+
+		+max-screen($mq_w_small)
+			margin-left: - $page_space_small
+			margin-right: - $page_space_small
+			padding: 0 $page_space_small
+
+	&__section
+		margin-bottom: 112px
+
+	&__top
+		min-height: 920px
+		position: relative
+		padding-top: 1px
+		max-width: $page-content_w_max
+		margin: auto
+
+	&__footer
+		background: #f1acf2
+
+	
+/* page
+/* ---------------------------------------END--- */
+
+
+/* txt-to-center
+/* --------------------------------------------- */
+
+.txt-to-center
+	text-align: center
+
+/* txt-to-center
+/* ---------------------------------------END--- */
+
+
+/* header
+/* --------------------------------------------- */
+
+.header
+	color: #fff
+	border-bottom: 1px solid $border_color
+	position: relative
+	+max-screen($mq_w_auth-hide)
+		border: none
+
+
+	a
+		+link-color ($color: #fff, $color_hover: $link_color, $color_visited: none)
+		border-bottom-color: $link_color_bottom !important
+
+	&__body
+		display: table
+		width: 100%
+		+max-screen($mq_w_auth-hide)
+			display: block
+
+	&__i
+		display: table-cell
+		height: 82px
+		vertical-align: middle
+		+max-screen($mq_w_auth-hide)
+			display: block
+			height: auto
+
+		&_logo
+			width: 30%
+			white-space: nowrap
+			+max-screen($mq_w_big)
+				width: 25%
+			+max-screen($mq_w_medium)
+				width: 0%
+			+max-screen($mq_w_auth-hide)
+				margin-bottom: 20px
+				margin-top: 27px
+			
+		&_nav
+			text-align: center
+			width: 40%
+			+max-screen($mq_w_auth-hide)
+				width: auto
+				text-align: left
+
+		&_auth
+			text-align: right
+			width: 30%
+			+max-screen($mq_w_big)
+				width: 35%
+			+max-screen($mq_w_medium)
+				width: 60%
+			+max-screen($mq_w_auth-hide)
+				position: absolute
+				top: -3px
+				right: 20px
+				width: auto !important
+
+/* header
+/* ---------------------------------------END--- */
+
+
+/* language
+/* --------------------------------------------- */
+
+.language
+	+rem(font-size, 14px)
+	display: inline-block
+	vertical-align: middle
+	body &
+		+link-color ($color: $text_color_darken, $color_hover: $link_color, $color_visited: none)
+
+/* language
+/* ---------------------------------------END--- */
+
+
+/* main-nav
+/* --------------------------------------------- */
+
+.main-nav
+	+max-screen($mq_w_auth-hide)
+		margin-left: -16px
+
+	&__lst
+		margin: 0
+		padding: 0
+		list-style-type: none
+		display: inline-block
+		vertical-align: middle
+		@extend %clear
+		
+	&__i
+		margin: 0
+		padding: 0
+		float: left
+
+	&__a
+		display: block
+		padding: 10px 16px
+		+link-color ($color: #fff, $color_hover: $link_color, $color_visited: none, $children: ".main-nav__txt")
+		border-bottom: none
+
+		+max-screen($mq_w_medium)
+			padding: 10px 10px
+		+max-screen($mq_w_auth-hide)
+			padding: 10px 16px
+		
+	&__a:hover &__txt
+		+transition-duration(.1s)
+
+	&__txt
+		display: inline-block
+		border-bottom-width: 1px
+		border-bottom-style: solid
+		border-bottom-color: $link_color_bottom !important
+		+transition-duration($link_animation-time)
+		+transition-property(border-color, color)
+		line-height: 1.2
+			
+
+
+/* main-nav
+/* ---------------------------------------END--- */
+
+
+/* auth
+/* --------------------------------------------- */
+
+.auth
+	position: relative
+	vertical-align: middle
+
+	+max-screen($mq_w_auth-hide)
+		z-index: 2
+
+	&__ctrl
+		display: none
+		width: 50px
+		height: 40px
+		border-radius: 20px
+		background: $button_color_light
+		cursor: pointer
+
+		&.is-open
+			background: $important_color_light
+			+transition-property(background)
+			+transition-duration($link_animation-time)
+
+		&:before
+			content: ''
+			display: none
+			position: absolute
+			top: 50%
+			left: 50%
+			margin-top: - image-height( sprite-path("user") )/2
+			margin-left: - image-width( sprite-path("user") )/2
+			+sprite-icon("user")
+
+			+max-screen($mq_w_auth-hide)
+				display: block
+
+		+max-screen($mq_w_auth-hide)
+			display: block
+
+	&__body
+		&.is-open
+			visibility: visible
+			+opacity(1)
+		+max-screen($mq_w_auth-hide)
+			padding: 20px
+			visibility: hidden
+			+opacity(0)
+			position: absolute
+			top: 100%
+			margin-top: 5px
+			border-radius: 20px
+			right: 0
+			background: $button_color_light
+			text-align: center
+			+transition-property(opacity, visibility)
+			+transition-duration($link_animation-time)
+
+
+	&__a
+		display: inline-block
+		height: 40px
+		line-height: 40px
+		border-radius: 20px
+		+link-color ($color: #fff, $color_hover: $link_color, $color_visited: none, $children: ".auth__txt")
+		border-bottom: none
+
+		
+
+		&_button
+			background: $button_color_light
+			margin-right: 3px
+			padding: 0 23px
+
+	&__a_enter &__txt
+		border-bottom-style: dotted
+
+
+	&__txt
+		display: inline-block
+		border-bottom-width: 1px
+		border-bottom-style: solid
+		border-bottom-color: $link_color_bottom !important
+		+transition-duration($link_animation-time)
+		+transition-property(border-color, color)
+		line-height: 1.2
+
+/* auth
+/* ---------------------------------------END--- */
+
+
+/* logo
+/* --------------------------------------------- */
+
+.logo
+	width: 104px
+	display: inline-block
+	border-bottom: none
+	margin-right: 26px
+	vertical-align: middle
+	outline: none !important
+	
+	&__img
+		display: block
+		max-width: 100%
+		height: auto
+
+	
+/* logo
+/* ---------------------------------------END--- */
+
+
+/* table
+/* --------------------------------------------- */
+
+.table 
+	margin-bottom: 20px
+	width: 100%
+	border: 2px solid #e9ecee
+
+	&__h td,
+	& th 
+		font-size: 13px
+		font-weight: bold
+		color: #888
+		background: #e9ecee
+
+	& th,
+	& td
+		padding: 10px 14px
+		border-bottom: 1px solid #e9ecee
+
+	&__line
+		background: #f6f6f6
+
+	
+/* table
+/* ---------------------------------------END--- */
+
+
+/* top-inf
+/* --------------------------------------------- */
+
+.top-inf
+	@extend %clear
+	position: relative
+
+	&__i
+		float: left
+		//background: #E0AEAE
+
+		&_main
+			color: #fff
+			padding-right: 35px
+			+max-screen($mq_w_top-inf)
+				margin-bottom: 25px
+
+		&_actions
+			padding-right: 65px
+
+		&_main,
+		&_actions
+			width: 76%
+			padding-right: 35px
+			@extend %bszbb
+			+max-screen($mq_w_medium)
+				width: 60%
+				padding-right: 0
+
+			+max-screen($mq_w_top-inf)
+				width: 100%
+		&_lst
+			position: absolute
+			right: 0
+			top: 0
+			width: 24%
+			//background: yellow
+			@extend %bszbb
+
+			+max-screen($mq_w_medium)
+				width: 40%
+
+			+max-screen($mq_w_top-inf)
+				width: auto
+				position: relative
+
+	&__h
+		+max-screen($mq_w_top-inf)
+			margin-bottom: 20px
+
+	&__slogan
+		padding-right: 30%
+
+	&__button
+		margin: 30px 0
+		+max-screen($mq_w_top-inf)
+			margin-right: 0
+			text-align: center
+			display: block
+
+	&__play-button-wrap
+		display: inline-block
+		vertical-align: middle
+	
+		+max-screen($mq_w_top-inf)
+			display: block
+			text-align: center
+
+	&__play-button
+		+max-screen(293px)
+			background: $button_color
+
+
+/* top-inf
+/* ---------------------------------------END--- */
+
+
+/* more
+/* --------------------------------------------- */
+
+.more
+	position: absolute
+	bottom: 35px
+	left: 0
+	right: 0
+	text-align: center
+	color: $text_color_darken
+	+rem(font-size, 18px)
+	padding-bottom: image-height( sprite-path("bottom-arrow") ) + 18px
+
+	+max-screen($mq_w_top-inf)
+		display: none
+
+	&:before
+		content: ''
+		display: block
+		position: absolute
+		bottom: 0
+		left: 50%
+		margin-left: - image-width( sprite-path("bottom-arrow") )/2
+		+sprite-icon("bottom-arrow")
+
+/* more
+/* ---------------------------------------END--- */
+
+
+/* selected
+/* --------------------------------------------- */
+
+.selected
+	display: inline-block
+	position: relative
+
+	&:before
+		content: ''
+		display: block
+		position: absolute
+		top: 5px
+		left: -7px
+		right: -7px
+		bottom: -5px
+		background: $button_color_light
+
+		+max-screen($mq_w_top-inf)
+			top: 1px
+			left: -3px
+			right: -6px
+			bottom: -3px
+
+	&__body
+		position: relative
+		z-index: 1
+
+	
+
+/* selected
+/* ---------------------------------------END--- */
+
+
+/* button
+/* --------------------------------------------- */
+
+.button
+	$button_h: 60px
+
+	display: inline-block
+	vertical-align: middle
+	border: none
+	height: $button_h
+	line-height: $button_h
+	background: $button_color
+	padding: 0 40px
+	border-radius: 30px
+	color: #fff !important
+	+rem(font-size, 24px)
+	@extend %bszbb
+	outline: none !important
+
+	+max-screen($mq_w_small)
+		+rem(font-size, 18px)
+
+	&_color_important
+		background: $important_color_light
+
+	&_space_right
+		margin-right: 22px
+
+	&:active
+		+box-shadow(inset 0px 4px 10px rgba(#000, .6))
+		line-height: $button_h + 4
+		
+		
+
+/* button
+/* ---------------------------------------END--- */
+
+
+/* play-button
+/* --------------------------------------------- */
+
+.play-button
+	$button_h: 50px
+
+	display: inline-block
+	vertical-align: middle
+	border: 1px solid $button_border !important
+	height: $button_h
+	line-height: $button_h
+	background: none
+	padding: 0 25px
+	border-radius: 3px
+	color: #fff !important
+	+rem(font-size, 14px)
+	@extend %bszbb
+	+transition-property(background)
+	outline: none !important
+
+	&:before
+		content: ''
+		display: inline-block
+		vertical-align: middle
+		top: -3px
+		margin-right: 16px
+		position: relative
+		width: 0
+		height: 0
+		border-style: solid
+		border-width: 10px 0 10px 20px
+		border-color: transparent transparent transparent #ffffff
+
+	&:hover
+		background: $button_color_light
+
+	&:active
+		+box-shadow(inset 0px 4px 10px rgba(#000, .6))
+		line-height: $button_h + 4
+
+/* play-button
+/* ---------------------------------------END--- */
+
+
+/* teasers
+/* --------------------------------------------- */
+
+.teasers
+	text-align: center
+	max-width: 224px
+	+max-screen($mq_w_medium)
+		padding-left: 20%
+	+max-screen($mq_w_top-inf)
+		padding-left: 0
+		text-align: left
+		max-width: 100%
+
+	&__lst
+		margin: 0
+		padding: 0
+		list-style-type: none
+		
+	&__i
+		margin: 0 0 25px 0
+		padding: 0
+		position: relative
+
+		+max-screen($mq_w_top-inf)
+			padding-left: 70px
+
+		&:last-child
+			margin-bottom: 0
+
+		&:before
+			content: ''
+			display: block
+			position: absolute
+			top: 0
+			left: 50%
+			+max-screen($mq_w_top-inf)
+				left: 0
+			
+		&_search
+			padding-top: image-height( sprite-path("location") ) + 16px
+
+			&:before
+				+sprite-icon("location")
+				margin-left: - image-width( sprite-path("location") )/2
+				+max-screen($mq_w_top-inf)
+					margin-left: 0
+			
+			+max-screen($mq_w_top-inf)
+				padding-top: 0
+			
+		&_location
+			padding-top: image-height( sprite-path("clip") ) + 16px
+
+			&:before
+				+sprite-icon("clip")
+				margin-left: - image-width( sprite-path("clip") )/2
+				+max-screen($mq_w_top-inf)
+					margin-left: 0
+			
+			+max-screen($mq_w_top-inf)
+				padding-top: 0
+
+	&__h
+		background: #255a7e
+		display: inline-block
+		+rem(font-size, 18px)
+		font-weight: bold
+		color: #fff
+		padding: 4px 8px
+		border-radius: 2px
+		margin-bottom: 10px
+
+		+max-screen($mq_w_top-inf)
+			+rem(font-size, 16px)
+			margin-bottom: 3px
+
+	&__description
+		+rem(font-size, 14px)
+		color: $text_color_darken
+
+
+/* teasers
+/* ---------------------------------------END--- */
+
+
+/* video
+/* --------------------------------------------- */
+
+.video
+	padding-top: 110px
+	position: relative
+	$video-figure_w: 234px
+	$video-figure_h: 202px
+	$video-figure_w_medium: 193px
+	$video-figure_h_medium: 167px
+	$video-figure_w_small: 102px
+	$video-figure_h_small: 88px
+
+	+max-screen($mq_w_small)
+		padding-top: 84px
+
+	&:before
+		z-index: -1
+		content: ''
+		display: block
+		position: absolute
+		top: 50px
+		left: 50%
+		width: $video-figure_w
+		margin-left: - ($video-figure_w / 2)
+		height: $video-figure_h
+		background: url("../img/figure-center-small.jpg") 0 0 no-repeat
+		background-size: cover
+
+		+max-screen($mq_w_medium)
+			width: $video-figure_w_medium
+			margin-left: - ($video-figure_w_medium / 2)
+			height: $video-figure_h_medium
+
+		+max-screen($mq_w_small)
+			width: $video-figure_w_small
+			margin-left: - ($video-figure_w_small / 2)
+			height: $video-figure_h_small
+
+
+	&__h
+		margin-bottom: 64px
+
+		+max-screen($mq_w_medium)
+			margin-bottom: 50px
+
+		+max-screen($mq_w_small)
+			margin-bottom: 26px
+	
+	&__video
+		max-width: 814px
+		margin: auto
+		margin-bottom: 60px
+		+box-shadow(0px -17px 25px -25px rgba($shadow_color, .8))
+
+		+max-screen($mq_w_small)
+			margin-bottom: 40px
+
+
+
+	&__a
+		border-bottom: none
+		display: inline-block
+		position: relative
+		padding-bottom: 56.25%
+		height: 0
+		border-bottom: none
+		outline: none !important
+		background: $shadow_color
+		+box-shadow(0px 60px 60px -50px rgba($shadow_color, .9))
+
+		iframe
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+
+	&__img
+		display: block
+		position: relative
+		z-index: 2
+
+
+
+/* video
+/* ---------------------------------------END--- */
+
+
+/* columns
+/* --------------------------------------------- */
+
+.columns
+	@extend %clear
+
+	&__i
+		@extend %bszbb
+		width: 50%
+		float: left
+
+		&:first-child
+			padding-right: 32px
+			+max-screen($mq_w_columns)
+				padding-right: 0
+
+		&:last-child
+			padding-left: 32px
+			+max-screen($mq_w_columns)
+				padding-left: 0
+
+		+max-screen($mq_w_columns)
+			width: 100%
+
+
+/* columns
+/* ---------------------------------------END--- */
+
+
+/* steps
+/* --------------------------------------------- */
+
+.steps
+	+rem(font-size, 18px)
+
+	+max-screen($mq_w_columns)
+		+rem(font-size, 14px)
+
+	&__h
+		+rem(font-size, 41px)
+		margin-bottom: 20px
+
+		+max-screen($mq_w_medium)
+			+rem(font-size, 36px)
+			margin-bottom: 16px
+
+		+max-screen($mq_w_columns)
+			+rem(font-size, 18px)
+			margin-bottom: 12px
+
+	&__lst
+		margin: 0
+		padding: 0
+		list-style-type: none
+		
+	&__i
+		margin: 0
+		padding: 0 0 24px 20px
+		position: relative
+
+		+max-screen($mq_w_medium)
+			padding-bottom: 20px
+
+		+max-screen($mq_w_columns)
+			padding-bottom: 12px
+
+		&:before
+			content: ''
+			display: block
+			position: absolute
+			top: 10px
+			left: 0
+			width: 6px
+			height: 6px
+			border-radius: 3px
+			background: $button_color
+			z-index: 1
+
+			+max-screen($mq_w_columns)
+				top: 7px
+
+		&:after
+			content: ''
+			display: block
+			position: absolute
+			top: 0
+			bottom: 0
+			left: 2px
+			width: 0
+			border-left: 1px dashed #c5c5c5
+
+			
+		&:first-child
+			&:after
+				top: 10px
+				+max-screen($mq_w_columns)
+					top: 7px
+
+		&:last-child
+			&:after
+				bottom: auto
+				height: 10px
+
+			
+
+
+/* steps
+/* ---------------------------------------END--- */

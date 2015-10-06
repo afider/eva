@@ -792,6 +792,11 @@
 		+max-screen($mq_w_columns)
 			width: 100%
 
+	&__button
+		+max-screen($mq_w_columns)
+			display: block
+			text-align: center
+			margin-bottom: 34px
 
 /* columns
 /* ---------------------------------------END--- */
@@ -802,9 +807,11 @@
 
 .steps
 	+rem(font-size, 18px)
+	margin-bottom: 24px
 
 	+max-screen($mq_w_columns)
 		+rem(font-size, 14px)
+		margin-bottom: 14px
 
 	&__h
 		+rem(font-size, 41px)
@@ -848,6 +855,20 @@
 
 			+max-screen($mq_w_columns)
 				top: 7px
+
+		&_done,
+		&_done2
+			&:before
+				+sprite-icon("flag2")
+				left: -2px
+				top: 7px
+
+				+max-screen($mq_w_columns)
+					top: 5px
+
+		&_done2
+			&:before
+				+sprite-icon("flag")
 
 		&:after
 			content: ''

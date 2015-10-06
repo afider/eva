@@ -808,7 +808,7 @@ body .language:hover {
   left: 50%;
   margin-top: -9.5px;
   margin-left: -7.5px;
-  background: url('../img/icons-s5d8ddbfddc.png') 0 -135px no-repeat;
+  background: url('../img/icons-sbc3c80bc69.png') 0 -163px no-repeat;
   width: 15px;
   height: 19px;
 }.auth__body.is-open {
@@ -956,7 +956,7 @@ body .language:hover {
   bottom: 0;
   left: 50%;
   margin-left: -7.5px;
-  background: url('../img/icons-s5d8ddbfddc.png') 0 0 no-repeat;
+  background: url('../img/icons-sbc3c80bc69.png') 0 0 no-repeat;
   width: 15px;
   height: 15px;
 }
@@ -1087,7 +1087,7 @@ body .language:hover {
   padding-top: 79px;
 }
 .teasers__i_search:before {
-  background: url('../img/icons-s5d8ddbfddc.png') 0 -71px no-repeat;
+  background: url('../img/icons-sbc3c80bc69.png') 0 -99px no-repeat;
   width: 50px;
   height: 63px;
   margin-left: -25px;
@@ -1095,7 +1095,7 @@ body .language:hover {
   padding-top: 70px;
 }
 .teasers__i_location:before {
-  background: url('../img/icons-s5d8ddbfddc.png') 0 -16px no-repeat;
+  background: url('../img/icons-sbc3c80bc69.png') 0 -16px no-repeat;
   width: 61px;
   height: 54px;
   margin-left: -30.5px;
@@ -1189,6 +1189,7 @@ body .language:hover {
 .steps {
   font-size: 18px;
   font-size: 1.8rem;
+  margin-bottom: 24px;
 }.steps__h {
   font-size: 41px;
   font-size: 4.1rem;
@@ -1213,7 +1214,18 @@ body .language:hover {
   border-radius: 3px;
   background: #1a4460;
   z-index: 1;
-}.steps__i:after {
+}.steps__i_done:before, .steps__i_done2:before {
+  background: url('../img/icons-sbc3c80bc69.png') 0 -85px no-repeat;
+  width: 12px;
+  height: 13px;
+  left: -2px;
+  top: 7px;
+}.steps__i_done2:before {
+  background: url('../img/icons-sbc3c80bc69.png') 0 -71px no-repeat;
+  width: 12px;
+  height: 13px;
+}
+.steps__i:after {
   content: "";
   display: block;
   position: absolute;
@@ -1541,9 +1553,16 @@ body .language:hover {
     width: 100%;
   }
 
+  .columns__button {
+    display: block;
+    text-align: center;
+    margin-bottom: 34px;
+  }
+
   .steps {
     font-size: 14px;
     font-size: 1.4rem;
+    margin-bottom: 14px;
   }
 
   .steps__h {
@@ -1558,6 +1577,10 @@ body .language:hover {
 
   .steps__i:before {
     top: 7px;
+  }
+
+  .steps__i_done:before, .steps__i_done2:before {
+    top: 5px;
   }
 
   .steps__i:first-child:after {

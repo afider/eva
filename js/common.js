@@ -23,10 +23,12 @@
 		    }
 		    
 		});
+		// authorization popup menu animation ---END--
 
 
-		$('.video__a').on('click', function(event) {
-			event.preventDefault();
+		// start playing a video on click
+		$('.video__a').on('click', function(e) {
+			e.preventDefault();
 			
 			var self = $(this);
 			var videoSrc = self.attr('href');
@@ -35,10 +37,20 @@
 			var iFrame = self.find('iframe').attr('src', 'https://www.youtube.com/embed/' + videoId);
 
 		});
+		// start playing a video on click ---END--
 
 
+		// got to the video on click on button
+		$(".js-go-to").click(function(e) {
+			e.preventDefault();
+			var self = $(this),
+			    target = $('.' + self.data('go-to'));
 
-
+		    $('html, body').animate({
+		        scrollTop: target.offset().top
+		    }, 800);
+		});
+		// got to the video on click on button ---END--
 
 
     });

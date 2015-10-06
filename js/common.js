@@ -53,5 +53,50 @@
 		// got to the video on click on button ---END--
 
 
+		// words animation
+		var maxW = 0;
+		var wordItems = $('.words__i');
+		var activeItemClass = 'words__i_active';
+		var activeItemClass2 = 'words__i_next';
+		var itemsNumber = wordItems.length;
+		var counter = $('.words__i_active').index()+2;
+
+		var timer = setInterval( showHide, 4000);
+
+		wordItems.each( function() {
+			
+			var self = $(this);
+
+			var itemW = self.width();
+
+			if (itemW > maxW) {	maxW = itemW; }
+
+		});
+		$('.words').css('width', maxW);
+		
+		function showHide () {
+			if (counter === 0) { counter++;	}
+
+			wordItems.removeClass(activeItemClass);
+			wordItems.removeClass(activeItemClass2);
+			wordItems.eq(counter-1).addClass(activeItemClass);
+			wordItems.eq(counter).addClass(activeItemClass2);
+
+			console.log(counter);
+
+			if (counter === itemsNumber) { 
+
+				counter = 0;
+				wordItems.eq(0).addClass(activeItemClass2);
+
+			} else {
+
+				 counter++;
+			}
+			
+		} // showHide
+		// words animation ---END--
+
+
     });
 }(this, jQuery));

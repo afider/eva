@@ -40,9 +40,6 @@
 /* --------------------------------------------- */
 
 .page
-	$page_space: 37px
-	$page_space_medium: 30px
-	$page_space_small: 15px
 
 	img
 		max-width: 100%
@@ -1134,3 +1131,171 @@
 
 /* producers-number
 /* ---------------------------------------END--- */
+
+
+/* faq-section
+/* --------------------------------------------- */
+
+.faq-section
+	background: url("../img/figure-bottom.jpg") center 0 no-repeat
+	margin-left: -$page_space
+	margin-right: -$page_space
+	padding-left: $page_space
+	padding-right: $page_space
+	padding-top: 136px
+
+	+max-screen($mq_w_medium)
+		padding-top: 90px
+
+	+max-screen($mq_w_small)
+		padding-top: 60px
+
+
+	+max-screen($mq_w_medium)
+		margin-left: -$page_space_medium
+		margin-right: -$page_space_medium
+		padding-left: $page_space_medium
+		padding-right: $page_space_medium
+
+	+max-screen($mq_w_small)
+		margin-left: -$page_space_small
+		margin-right: -$page_space_small
+		padding-left: $page_space_small
+		padding-right: $page_space_small
+
+	&__h
+		margin-bottom: 72px
+		+max-screen($mq_w_medium)
+			margin-bottom: 58px
+
+		+max-screen($mq_w_small)
+			margin-bottom: 30px
+		
+
+/* faq-section
+/* ---------------------------------------END--- */
+
+
+/* faq
+/* --------------------------------------------- */
+
+.faq
+	@extend %clear
+	margin-bottom: 154px
+	+max-screen($mq_w_medium)
+		margin-bottom: 66px
+	+max-screen($mq_w_small_faq)
+		margin-bottom: 40px
+
+	&__column
+		@extend %bszbb
+		float: left
+		+max-screen($mq_w_small_faq)
+			float: none
+
+		&_nav
+			width: 34%
+			
+			
+		&_description
+			width: 66%
+			+max-screen($mq_w_small_faq)
+				display: none
+
+		&_nav,
+		&_description
+			+max-screen($mq_w_small_faq)
+				width: 100%
+
+	&__lst
+		margin: 0
+		padding: 0
+		list-style-type: none
+		margin-right: 26%
+		+max-screen($mq_w_small_faq)
+			margin-right: 0
+
+
+	&__i
+		margin: 0
+		padding: 0
+		
+		
+	&__i.is-acitve &__h
+		&:after
+			+min-screen($mq_w_small_faq + 1)
+				display: block
+
+	&__h
+		position: relative
+		cursor: pointer
+		+rem(font-size, 13px)
+		-webkit-touch-callout: none
+		-webkit-user-select: none
+		-khtml-user-select: none
+		-moz-user-select: none
+		-ms-user-select: none
+		user-select: none
+		
+		&:after
+			content: ''
+			display: block
+			position: absolute
+			top: 0
+			bottom: 0
+			display: none
+			width: 25px
+			right: -25px
+			background: url("../img/arrow-right.png") 0 0 no-repeat
+			background-size: contain
+		
+		+min-screen($mq_w_small_faq + 1)
+			margin-left: -18px
+			padding: 10px 5px 10px 18px
+			border-radius: 6px 0 0 6px
+
+		+max-screen($mq_w_small_faq)
+			+rem(font-size, 15px)
+			font-weight: bold
+			padding: 10px 0
+
+
+	&__i.is-acitve &__h
+		+min-screen($mq_w_small_faq + 1)
+			background: rgba(#e1d2c0, .35)
+
+	&__h-txt
+		display: inline
+		+link-color ($color: $text_color, $color_hover: $text_color, $color_visited: none)
+		border-bottom-style: dotted
+		
+	&__description
+		display: none
+		margin-top: -5px
+		color: $text_color_gray
+
+
+		.is-acitve > &
+			display: block
+
+		+min-screen($mq_w_small_faq + 1)
+			display: none !important
+
+	&__h-big
+		+rem(font-size, 26px)
+		font-weight: bold
+		margin-bottom: 28px
+
+
+	&__i-big
+		display: none
+
+		&.is-acitve 
+			display: block
+
+		+max-screen($mq_w_small_faq)
+			display: none !important
+/* faq
+/* ---------------------------------------END--- */
+
+

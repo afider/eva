@@ -27,14 +27,17 @@
 
 
 		// start playing a video on click
-		$('.video__a').on('click', function(e) {
-			e.preventDefault();
+		$('.video__a').find('iframe').attr('src', ''); // for IE, not to cash iframe and playing video after page loading
+
+		$('.video__a').on('click', function(event) {
+			event.preventDefault();
 			
 			var self = $(this);
-			var videoSrc = self.attr('href');
+			var videoSrc = self.data('video');
 			var videoId = videoSrc.substr(videoSrc.length - 11) + '?rel=0&autoplay=1';
-			var replaceItem = self.find('img').css('z-index', '0');
-			var iFrame = self.find('iframe').attr('src', 'https://www.youtube.com/embed/' + videoId);
+
+			self.find('img').css('z-index', '0');
+			self.find('iframe').attr('src', 'https://www.youtube.com/embed/' + videoId);
 
 		});
 		// start playing a video on click ---END--

@@ -1205,11 +1205,9 @@ body .language:hover {
   display: block;
   position: relative;
   z-index: 2;
+  width: 100%;
   max-width: 100%;
   height: auto;
-}
-.ie9 .video__img {
-  width: 100%;
 }
 
 /* video */

@@ -583,6 +583,9 @@
 	&_color_important
 		background: $important_color_light
 
+	&_color_light
+		background: $button_color_light
+
 	&_space_right
 		margin-right: 22px
 
@@ -1163,6 +1166,9 @@
 		padding-left: $page_space_small
 		padding-right: $page_space_small
 
+	&__section
+		margin-bottom: 60px
+
 	&__h
 		margin-bottom: 72px
 		+max-screen($mq_w_medium)
@@ -1299,3 +1305,91 @@
 /* ---------------------------------------END--- */
 
 
+/* message
+/* --------------------------------------------- */
+
+.message
+	$message_w: 857px
+	$message_h: 739px
+	$message_w_medium: 704px
+	$message_h_medium: 607px
+	$message_w_small: 288px
+	$message_h_small: 287px
+
+	position: relative
+	padding-top: 190px
+	color: #fff
+	background: url("../img/figure-bottom-sm.png") 0 0 no-repeat
+	background-size: contain
+	max-width: $message_w
+	height: $message_h
+	@extend %bszbb
+	margin: auto
+	text-align: center
+
+	&:before
+		content: ''
+		display: block
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		background: url("../img/pills.png") center 0 no-repeat
+
+	+max-screen($mq_w_medium)
+		padding-top: 140px
+		//height: $message_h_medium
+
+	+max-screen($mq_w_small_message)
+		background: url("../img/figure-bottom-sm-sm.png") center 0 no-repeat
+		background-size: contain
+		padding-top: 170px
+
+	+max-screen($mq_w_small_message2)
+		padding-top: 140px
+		height: 630px
+
+	+max-screen($mq_w_small)
+		padding-top: 70px !important
+		height: 470px
+
+	&__txt
+		width: 60%
+		margin: auto
+		margin-bottom: 30px
+
+		+max-screen($mq_w_small_message2)
+			margin-bottom: 15px
+
+	&__body
+		position: relative
+		z-index: 1
+	
+	&__buttons
+		margin-bottom: 56px
+		+max-screen($mq_w_small_message2)
+			margin-bottom: 25px
+
+	&__a
+		margin-bottom: 15px
+	
+	&__h
+		margin-bottom: 15px
+
+	&__contacts
+		line-height: 1.9
+		a
+			+link-color ($color: #fff, $color_hover: $link_color, $color_visited: none)
+
+		+max-screen($mq_w_small_message2)
+			line-height: 1.5
+
+	&__button
+		+max-screen($mq_w_small_message2)
+			+rem(font-size, 16px)
+		
+		+max-screen($mq_w_small_message)
+
+/* message
+/* ---------------------------------------END--- */

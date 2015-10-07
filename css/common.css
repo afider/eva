@@ -575,7 +575,7 @@ textarea {
   resize: vertical;
 }
 
-.page, .top-inf__i_main, .top-inf__i_actions, .top-inf__i_lst, .button, .play-button, .preferences__col, .columns__i, .faq__column {
+.page, .top-inf__i_main, .top-inf__i_actions, .top-inf__i_lst, .button, .play-button, .preferences__col, .columns__i, .faq__column, .message {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -1041,6 +1041,9 @@ body .language:hover {
 }.button_color_important {
   background: #d65a5a;
 }
+.button_color_light {
+  background: #335971;
+}
 .button_space_right {
   margin-right: 22px;
 }
@@ -1392,7 +1395,10 @@ body .language:hover {
   padding-left: 37px;
   padding-right: 37px;
   padding-top: 136px;
-}.faq-section__h {
+}.faq-section__section {
+  margin-bottom: 60px;
+}
+.faq-section__h {
   margin-bottom: 72px;
 }
 /* faq-section */
@@ -1476,6 +1482,64 @@ body .language:hover {
   display: block;
 }
 /* faq */
+/* ---------------------------------------END--- */
+/* message */
+/* --------------------------------------------- */
+.message {
+  position: relative;
+  padding-top: 190px;
+  color: #fff;
+  background: url("../img/figure-bottom-sm.png") 0 0 no-repeat;
+  background-size: contain;
+  max-width: 857px;
+  height: 739px;
+  margin: auto;
+  text-align: center;
+}
+.message:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("../img/pills.png") center 0 no-repeat;
+}.message__txt {
+  width: 60%;
+  margin: auto;
+  margin-bottom: 30px;
+}.message__body {
+  position: relative;
+  z-index: 1;
+}
+.message__buttons {
+  margin-bottom: 56px;
+}.message__a {
+  margin-bottom: 15px;
+}
+.message__h {
+  margin-bottom: 15px;
+}
+.message__contacts {
+  line-height: 1.9;
+}
+.message__contacts a {
+  color: #fff;
+  border-color: white;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+.message__contacts a:visited {
+  color: #fff;
+  border-color: white;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+.message__contacts a:hover {
+  color: #ff3838;
+  border-color: #ffd1d1;
+  border-color: rgba(255, 56, 56, 0.3);
+}
+/* message */
 /* ---------------------------------------END--- */
 
 @media screen and (max-width: 885px) {
@@ -1630,6 +1694,10 @@ body .language:hover {
   .faq {
     margin-bottom: 66px;
   }
+
+  .message {
+    padding-top: 140px;
+  }
 }
 
 @media screen and (max-width: 430px) {
@@ -1743,6 +1811,11 @@ body .language:hover {
 
   .faq-section__h {
     margin-bottom: 30px;
+  }
+
+  .message {
+    padding-top: 70px !important;
+    height: 470px;
   }
 }
 
@@ -2029,5 +2102,37 @@ body .language:hover {
 
   .faq__description {
     display: none !important;
+  }
+}
+
+@media screen and (max-width: 730px) {
+  .message {
+    background: url("../img/figure-bottom-sm-sm.png") center 0 no-repeat;
+    background-size: contain;
+    padding-top: 170px;
+  }
+}
+
+@media screen and (max-width: 470px) {
+  .message {
+    padding-top: 140px;
+    height: 630px;
+  }
+
+  .message__txt {
+    margin-bottom: 15px;
+  }
+
+  .message__buttons {
+    margin-bottom: 25px;
+  }
+
+  .message__contacts {
+    line-height: 1.5;
+  }
+
+  .message__button {
+    font-size: 16px;
+    font-size: 1.6rem;
   }
 }
